@@ -114,7 +114,7 @@ portfolio/
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/arnabroy466/portfolio.git
+   git clone https://github.com/ARoyCCgit/portfolio.git
    cd portfolio
    ```
 
@@ -154,7 +154,7 @@ The portfolio is optimized for zero-config deployment on Vercel:
 1. Push your repository to GitHub:
    ```bash
    git branch -M main
-   git remote add origin https://github.com/arnabroy466/portfolio.git
+   git remote add origin https://github.com/ARoyCCgit/portfolio.git
    git push -u origin main
    ```
 2. Log into [Vercel](https://vercel.com/) and click **"Add New Project"**.
