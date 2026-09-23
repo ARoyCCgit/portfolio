@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen flex flex-col bg-[#090d16] text-slate-100 font-sans">
+    <div className="relative min-h-screen flex flex-col bg-slate-50 dark:bg-[#090d16] text-slate-900 dark:text-slate-100 font-sans transition-colors duration-200">
       {/* Background ambient lighting */}
       <div className="ambient-glow" aria-hidden="true" />
 

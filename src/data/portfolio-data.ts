@@ -1,8 +1,10 @@
+export type ProjectCategory = "Full-Stack" | "Backend" | "Cloud & Microservices" | "Integrations";
+
 export interface Project {
   id: string;
   title: string;
   tagline: string;
-  category: "Full-Stack" | "Backend" | "Cloud & Microservices" | "Integrations";
+  category: ProjectCategory | ProjectCategory[];
   problem: string;
   solution: string;
   impactMetric: string;
@@ -35,13 +37,13 @@ export const portfolioData = {
     name: "Arnab Roy",
     role: "Senior Full-Stack & Backend Software Engineer",
     shortBio:
-      "Nearly 5 years of professional engineering experience architecting high-availability backend systems, microservices, and modern web applications with Node.js, Express.js, Next.js, PHP (Laravel), and distributed cloud infrastructure.",
+      "I build scalable backend systems, custom Shopify solutions, APIs, integrations, and e-commerce experiences using PHP, Laravel, Node.js, JavaScript, and modern web technologies. 5+ years of experience turning complex business requirements into reliable, production-ready solutions.",
     availability: "Available for Senior Full-Stack & Backend Roles",
     isAvailable: true,
     location: "Hooghly, West Bengal, India (Open to Remote Worldwide)",
     email: "arnabroy466@gmail.com",
     phone: "+91-8159097432",
-    github: "https://github.com/arnabroy466",
+    github: "https://github.com/ARoyCCgit",
     linkedin: "https://linkedin.com/in/arnab-roy-84115a197",
     resumeUrl: "/Arnab_Roy_CV.pdf",
     yearsOfExperience: "5",
@@ -55,11 +57,12 @@ export const portfolioData = {
       "Lead Node.js / Laravel Developer",
       "API & Systems Architect",
     ],
-    experienceLevel: "Nearly 5 Years Building Production Web & Enterprise Applications",
+    experienceLevel: "5+ Years Building Production Web & Enterprise Applications",
     preferredWorkType: "Remote / Hybrid / Full-Time",
     noticePeriod: "Immediate / 2 Weeks",
     coreStrengths: [
-      "Microservice & API Architecture with Node.js, Express.js, Next.js, and PHP/Laravel",
+      "Backend & API Architecture with Node.js, Express.js, Next.js, and PHP/Laravel",
+      "GenAI solutions & AI workflow integrations with Gemini Pro and ChatGPT",
       "Real-time event streaming with WebSockets (Socket.IO), WebRTC, and RabbitMQ",
       "Multi-gateway payment engineering (Stripe, PayPal, Razorpay, Square, escrow & split payouts)",
       "Logistics & enterprise integrations (Extensiv 3PL, Microsoft SSO, OAuth 2.0, n8n automation)",
@@ -67,7 +70,7 @@ export const portfolioData = {
   },
 
   metrics: [
-    { label: "Years Experience", value: "5 Yrs", detail: "Nearly 5 yrs in enterprise & SaaS" },
+    { label: "Years Experience", value: "5+ Yrs", detail: "5+ yrs in enterprise & SaaS" },
     { label: "Production Delivery", value: "20+", detail: "Full-stack apps & APIs shipped" },
     { label: "Throughput Boost", value: "+40%", detail: "Query & Redis caching optimization" },
     { label: "API Latency", value: "<80ms", detail: "Sub-second response optimization" },
@@ -78,7 +81,7 @@ export const portfolioData = {
       id: "have-it-super-app",
       title: "Have-it Super-App",
       tagline: "Unified Real-Time Messenger + Instagram-Grade Social Ecosystem",
-      category: "Full-Stack",
+      category: ["Full-Stack", "Cloud & Microservices"],
       problem:
         "Modern communication applications often suffer from latency-heavy polling or fail to combine high-speed ephemeral chat with media-rich social discovery in a single microservices architecture.",
       solution:
@@ -98,7 +101,7 @@ export const portfolioData = {
         "Tailwind CSS v4",
       ],
       liveUrl: "https://have-it-me.vercel.app/",
-      githubUrl: "https://github.com/arnabroy466/have-it-super-app",
+      githubUrl: "https://github.com/ARoyCCgit/have-it.git",
       featured: true,
       statusBadge: "Live Production App",
     },
@@ -114,8 +117,8 @@ export const portfolioData = {
       impactMetric: "⚡ 85% Reduction in Lead Handoff Time",
       impactLabel: "Automated end-to-end routing for thousands of daily marketing inquiries without dropped events",
       techStack: ["n8n", "Node.js", "Salesforce API", "GoHighLevel API", "REST APIs", "Webhooks"],
-      liveUrl: "https://github.com/arnabroy466/n8n-crm-automation",
-      githubUrl: "https://github.com/arnabroy466/n8n-crm-automation",
+      liveUrl: "https://github.com/ARoyCCgit/ai-automation-mail-n8n",
+      githubUrl: "https://github.com/ARoyCCgit/ai-automation-mail-n8n",
       featured: true,
       statusBadge: "Production Workflow",
     },
@@ -123,7 +126,7 @@ export const portfolioData = {
       id: "multi-tenant-saas-platform",
       title: "Multi-Tenant Enterprise SaaS Core",
       tagline: "Dynamic Tenant Isolation, Subdomain Routing & Strict TypeScript RBAC",
-      category: "Full-Stack",
+      category: ["Full-Stack", "Cloud & Microservices"],
       problem:
         "B2B SaaS architectures face severe data security risks, cross-tenant data leaks, and schema migration bottlenecks as organization accounts scale into the hundreds.",
       solution:
@@ -156,44 +159,10 @@ export const portfolioData = {
       impactMetric: "🔒 99.99% Authentication Reliability",
       impactLabel: "Seamless single sign-on experience across multiple corporate web applications with zero token leaks",
       techStack: ["Node.js", "Express.js", "OAuth 2.0", "JWT", "PHP / Laravel", "Redis", "MySQL"],
-      liveUrl: "https://github.com/arnabroy466/microsoft-enterprise-sso",
-      githubUrl: "https://github.com/arnabroy466/microsoft-enterprise-sso",
+      liveUrl: "#",
+      githubUrl: "#",
       featured: false,
       statusBadge: "Enterprise Core",
-    },
-    {
-      id: "extensiv-3pl-logistics",
-      title: "Extensiv 3PL Logistics & Tracking Hub",
-      tagline: "Automated Real-Time Shipment & Inventory Synchronization Engine",
-      category: "Integrations",
-      problem:
-        "High-volume e-commerce brands experienced delays, missed orders, and manual entry errors between order fulfillment systems and 3PL warehouses.",
-      solution:
-        "Built automated data ingestion pipelines connecting Extensiv 3PL APIs, webhook listeners, and background queues for real-time shipment monitoring, inventory reconciliation, and operational reporting.",
-      impactMetric: "📦 50k+ Monthly Shipments Synced",
-      impactLabel: "Zero data loss with automated retry mechanisms and real-time carrier status webhooks",
-      techStack: ["Node.js", "Laravel", "REST APIs", "Webhooks", "Cron Jobs", "MySQL", "Docker"],
-      liveUrl: "https://github.com/arnabroy466/extensiv-3pl-hub",
-      githubUrl: "https://github.com/arnabroy466/extensiv-3pl-hub",
-      featured: false,
-      statusBadge: "Logistics Integration",
-    },
-    {
-      id: "multi-gateway-payments",
-      title: "Multi-Gateway Transaction Engine",
-      tagline: "High-Volume Checkout with Split Payments & Multi-Vendor Payouts",
-      category: "Backend",
-      problem:
-        "Multi-vendor marketplace transactions required complex escrow holds, automated vendor commission splits, and support for diverse local and global payment gateways.",
-      solution:
-        "Developed a resilient transaction engine integrating Stripe, PayPal, Razorpay, and Square, featuring automated webhook reconciliation, split disbursements, and idempotency protection.",
-      impactMetric: "💳 Millions in Processed Volume",
-      impactLabel: "Sub-200ms payment webhook acknowledgment with automated dispute and refund management",
-      techStack: ["PHP / Laravel", "Node.js", "Stripe API", "PayPal SDK", "Razorpay", "Square", "MySQL"],
-      liveUrl: "https://github.com/arnabroy466/multi-gateway-payments",
-      githubUrl: "https://github.com/arnabroy466/multi-gateway-payments",
-      featured: false,
-      statusBadge: "Fintech & Payments",
     },
   ] as Project[],
 
@@ -215,19 +184,21 @@ export const portfolioData = {
       description: "Data modeling, caching, cloud storage, and containerization",
       skills: [
         { name: "MySQL & Query Optimization", level: "Expert" },
-        { name: "MongoDB Atlas & Aggregation", level: "Advanced" },
-        { name: "Redis Caching & Pub/Sub", level: "Advanced" },
-        { name: "AWS S3 & Cloud Services", level: "Advanced" },
+        { name: "Azure Services (App Service, Functions, Storage)", level: "Expert" },
+        { name: "MongoDB Atlas & Aggregation", level: "Intermediate" },
+        { name: "Redis Caching", level: "Intermediate" },
+        { name: "AWS S3", level: "Proficient" },
         { name: "Docker & Containerization", level: "Advanced" },
         { name: "Postman API Automation & Testing", level: "Expert" },
       ],
     },
     {
       title: "Frontend & Integrations",
-      description: "Modern UI engineering, payments, and workflow automations",
+      description: "Modern UI engineering, GenAI, payments, and workflow automations",
       skills: [
         { name: "Next.js 15/16 (App Router) & React 19", level: "Advanced" },
         { name: "TypeScript & JavaScript (ES6+)", level: "Advanced" },
+        { name: "GenAI (Gemini Pro, ChatGPT)", level: "Advanced" },
         { name: "Tailwind CSS & Responsive UI", level: "Advanced" },
         { name: "Payment Gateways (Stripe, PayPal, Razorpay)", level: "Expert" },
         { name: "n8n Workflow & CRM Automation (GHL, Salesforce)", level: "Advanced" },
